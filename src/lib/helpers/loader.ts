@@ -1,13 +1,13 @@
 import { page } from '$app/state';
 import type { Asset, Progress } from '$types';
-import { useManager } from '$hooks/manager.svelte';
+import { useAssetsManager } from '$hooks/assets-manager.svelte';
 
 type XHRRequest = ((this: XMLHttpRequest, e: ProgressEvent | Event) => unknown) | null;
 
 export const preloadAssets = async ({ assets }: { assets: Asset[] }) => {
   // preloading assets.
 
-  const manager = useManager();
+  const manager = useAssetsManager();
   const headRequests = [];
 
   for (const asset of assets) {
