@@ -10,10 +10,11 @@ export interface Progress {
 }
 
 export interface MediaElementState {
-  videoIntro: HTMLVideoElement;
-  videoLoop: HTMLVideoElement;
-  audio: HTMLAudioElement;
-  bgm: HTMLAudioElement;
+  videoIntro: HTMLVideoElement | null;
+  videoLoop: HTMLVideoElement | null;
+  audio: HTMLAudioElement | null;
+  bgm: HTMLAudioElement | null;
+  loadingElement: HTMLDivElement | null;
 }
 
 export interface MediaPlayState {
@@ -23,4 +24,5 @@ export interface MediaPlayState {
   canPlay: boolean;
   showContinueBtn: boolean;
   removeLoadingScreen: boolean;
+  allowPlay: boolean;
 }
