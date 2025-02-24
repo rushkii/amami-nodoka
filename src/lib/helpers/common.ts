@@ -11,3 +11,10 @@ export const formatBytes = (bytes: number, decimals: number = 2) => {
 
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 };
+
+export const calculatePercent = (current: number, total: number) => {
+  // assets progress percent calculator.
+  const percent = (current / total) * 100;
+  if (isNaN(percent)) return 0;
+  return percent;
+};
